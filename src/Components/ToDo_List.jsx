@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
-import { Mycontext } from './Mycontext'
+import React, {  useState  } from 'react'
+// import { Mycontext } from './Mycontext'
 
-function ToDo_List() {
+function ToDo_List({State,dispatch}) {
 
     const [input,setinput] = useState("")
 
-    const {State,dispatch} = useContext(Mycontext)
+    // const {State,dispatch} = useContext(Mycontext)
 
     const AddTask = () => {
         if(input.trim() !== ''){
@@ -27,7 +27,7 @@ function ToDo_List() {
         <button className='text-sm bg-purple-500 text-cyan-100  bold rounded border-2 p-2 ml-4' onClick={AddTask}>Add Task</button>
       </div>
 
-      <div className='mt-15 justify-center items-center w-screen  overflow-auto  flex flex-col  '>
+      <div className='mt-15 justify-center items-center w-screen  overflow-auto  flex flex-col '>
 
         {State.todos.map((T,index)=>(
             <div  className='flex  flex-row m-4' key={index}>
